@@ -7,6 +7,7 @@ solc = "0.8.18"
 remappings = [
     'forge-std/=lib/forge-std/src/',
     '@openzeppelin/=lib/openzeppelin-contracts/',
+    '@pendle/core-v2/=lib/pendle-core-v2-public/',
 ]
 fs_permissions = [{ access = "read", path = "./"}]
 
