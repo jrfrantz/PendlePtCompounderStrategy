@@ -43,7 +43,7 @@ contract PendlePtCompounderStrategy is BaseStrategy {
                       IMMUTABLES
     //////////////////////////////////////////////////////////////*/
     IPAllActionV3 public immutable router;
-    IPPtOracle internal immutable ptOracle = IPPtOracle(0x66a1096C6366b2529274dF4f5D8247827fe4CEA8);
+    IPPtOracle internal immutable ptOracle;
 
 
     /*//////////////////////////////////////////////////////////////
@@ -59,6 +59,7 @@ contract PendlePtCompounderStrategy is BaseStrategy {
 
     constructor(address _asset, address initialMarket) BaseStrategy(_asset, "PendlePTCompounder") {
         router = IPAllActionV3(0x00000000005BBB0EF59571E58418F9a4357b68A0);
+        ptOracle = IPPtOracle(0x66a1096C6366b2529274dF4f5D8247827fe4CEA8);
         asset.approve(address(router), type(uint256).max);
         currentMarket = IPMarket(initialMarket);
         _initializeMarket(currentMarket);
