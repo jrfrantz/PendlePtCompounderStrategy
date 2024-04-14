@@ -131,7 +131,7 @@ contract PendlePtCompounderStrategy is BaseStrategy {
 
         // redeem all of our token
         (, IPPrincipalToken PT,) = currentMarket.readTokens();
-        _redeemAssetFromPt(PT.balanceOf(address(this)));
+        _totalAssets = _redeemAssetFromPt(PT.balanceOf(address(this)));
 
         // bump market to next
         currentMarket = nextMarket;
