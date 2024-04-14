@@ -27,7 +27,7 @@ contract Demo is Script {
 
     function setUp() public {
         uint256 forkId =
-            vm.createSelectFork("https://eth-mainnet.g.alchemy.com/v2/ZqfVOtoK34QDr2El7RkViZZEplF4o8-7", 19603584);
+            vm.createSelectFork(vm.envString("MAINNET_RPC_URL"), 19603584);
 
         ezEth = IERC20(0xbf5495Efe5DB9ce00f80364C8B423567e58d2110);
         SY = IStandardizedYield(0x22E12A50e3ca49FB183074235cB1db84Fe4C716D);
